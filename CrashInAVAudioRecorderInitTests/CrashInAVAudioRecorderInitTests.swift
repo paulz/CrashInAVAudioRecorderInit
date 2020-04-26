@@ -21,6 +21,7 @@ class CrashInAVAudioRecorderInitTests: XCTestCase {
 
     // Causing crash: *** CFEqual() called with NULL first argument ***
     // in CFEqual.cold.1 ()
+    // Expecting error as in test2 instead of a crash
     func test3ExpectingNilActualCrash() throws {
         let invalidUrlCausingCrash = URL(string: "mailto:bugreport@apple.com")!
         let recorder = try? AVAudioRecorder(url: invalidUrlCausingCrash, settings: [:])
